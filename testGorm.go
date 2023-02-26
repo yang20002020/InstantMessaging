@@ -34,8 +34,6 @@ func main() {
 	user.Name = "申专"
 	db.Create(user)
 
-	// Read
-	//var product Product
 	fmt.Println(db.First(user, 1)) //根据整型主键查找
 
 	// Update - 将 product 的 price 更新为 200
