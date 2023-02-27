@@ -1,0 +1,2 @@
+mysql:
+  dns:root:fendou2017@tcp(127.0.0.1:3306)/ginchat?charset=utf8&parseTime=true&loc=Local
