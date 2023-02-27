@@ -1,6 +1,8 @@
 package models
 
 import (
+	"InstantMessaging/utils"
+	"fmt"
 	"gorm.io/gorm"
 	"time"
 )
@@ -23,4 +25,13 @@ type UserBasic struct {
 
 func (table *UserBasic) TableName() string {
 	return "user_basic"
+}
+
+func GetUserList() []*UserBasic {
+	data := make([]*UserBasic, 10)
+	utils.DB.Find(&data)
+	for v := range data {
+		fmt.Println(v)
+	}
+	return data
 }
