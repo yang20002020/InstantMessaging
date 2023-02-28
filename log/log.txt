@@ -7,3 +7,13 @@
 (4).go get -u github.com/swaggo/files
 (5). 运行 主程序
 浏览器 127.0.0.1:8081/swagger/index.html，页面会显示swagger对应的页面logo
+
+2.在package service包中
+（1）添加注释格式，注意写的格式不能出现错误，如下所示
+// GetIndex
+// @Tags         首页
+// @Accept       json
+// @Success      200  {string}  welcome
+// @Router      /index [get]
+（2） 在命令行中输入swag init
+（3）浏览器 127.0.0.1:8081/swagger/index.html，进行测试
