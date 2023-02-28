@@ -17,8 +17,8 @@ func InitConfig() {
 	if err != nil {
 		fmt.Println("err:", err)
 	}
-	fmt.Println("config app:", viper.Get("app"))
-	fmt.Println("config mysql:", viper.Get("mysql"))
+	fmt.Println("config app inited:", viper.Get("app"))
+	fmt.Println("config mysql inited:", viper.Get("mysql"))
 }
 
 func InitMySql() {
@@ -31,5 +31,5 @@ func InitMySql() {
 	//DB.Find(&user)
 	//fmt.Println("user", user) //
 	//return DB
-
+	fmt.Println("mysql inited")
 }

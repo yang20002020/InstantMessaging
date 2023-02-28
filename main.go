@@ -6,18 +6,20 @@ import (
 )
 
 /*
-1.运行主程序
-2. 浏览器输入 http://127.0.0.1:8081/user/getUserList
-浏览器会显示
-{"message":[{"ID":1,"CreatedAt":"2023-02-27T11:22:22+08:00",
-"UpdatedAt":"2023-02-27T11:22:22+08:00","DeletedAt":null,
-"Name":"申专","PassWord":"1234","Email":"","Identity":"",
-"ClientIp":"","ClientPort":"","LoginTime":"0001-01-01T00:00:00Z",
-"HeartbeatTime":"0001-01-01T00:00:00Z",
-"login_out_time":"0001-01-01T00:00:00Z",
-"IsLoginOut":false,"DeviceInfo":""}]}
+		前后端分离引入swagger
+
+	 资料地址: https://pkg.go.dev/github.com/swaggo/swag
+
+使用方法：
+1.下载地址：$ go install github.com/swaggo/swag/cmd/swag@latest
+2. swag init 创建docs文件
+3.go get -u github.com/swaggo/gin-swagger
+4.go get -u github.com/swaggo/files
+5. 运行 主程序
+浏览器 127.0.0.1:8081/swagger/index.html，页面会显示swagger对应的页面logo
 */
 func main() {
+	//初始化配置文件以及数据库
 	utils.InitConfig()
 	utils.InitMySql()
 	r := router.Router()
