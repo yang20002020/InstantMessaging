@@ -17,9 +17,6 @@ const docTemplate = `{
     "paths": {
         "/index": {
             "get": {
-                "consumes": [
-                    "application/json"
-                ],
                 "tags": [
                     "首页"
                 ],
@@ -33,11 +30,8 @@ const docTemplate = `{
                 }
             }
         },
-        "/user/GetUserList": {
+        "/user/getUserList": {
             "get": {
-                "consumes": [
-                    "application/json"
-                ],
                 "tags": [
                     "首页"
                 ],

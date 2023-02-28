@@ -3,8 +3,6 @@ info:
 paths:
   /index:
     get:
-      consumes:
-      - application/json
       responses:
         "200":
           description: OK
@@ -12,10 +10,8 @@ paths:
             type: string
       tags:
       - 首页
-  /user/GetUserList:
+  /user/getUserList:
     get:
-      consumes:
-      - application/json
       responses:
         "200":
           description: code","message"}

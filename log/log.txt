@@ -12,8 +12,14 @@
 （1）添加注释格式，注意写的格式不能出现错误，如下所示
 // GetIndex
 // @Tags         首页
-// @Accept       json
 // @Success      200  {string}  welcome
 // @Router      /index [get]
 （2） 在命令行中输入swag init
 （3）浏览器 127.0.0.1:8081/swagger/index.html，进行测试
+同理，应用在GetUserList函数
+3.sql日志打印
+（1）在InitMySql() 函数中自定义日志模板，打印sql语句
+ 运行程序，终端会显示
+ SELECT * FROM `user_basic` WHERE `user_basic`.`deleted_at` IS NULL
+
+
