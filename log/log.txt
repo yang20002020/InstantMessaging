@@ -22,4 +22,8 @@
  运行程序，终端会显示
  SELECT * FROM `user_basic` WHERE `user_basic`.`deleted_at` IS NULL
 
+4.实现用户模块新增、删除以及更新功能
+测试
+浏览器 127.0.0.1:8081/swagger/index.html，进行测试
+输入 姓名、密码以及确认密码、id相关信息，数据库会对应更新user信息
 
