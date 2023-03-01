@@ -12,6 +12,14 @@ http://127.0.0.1:8081/index
 浏览器测试：
 127.0.0.1:8081/ping
 
+3.
+配置数据初始化
+（1）主要是添加了app.yml文件
+（2）主程序运行go run  main.go
+（3）终端会显示：
+config app: <nil>
+config mysql: dns:root:fendou2017@tcp(127.0.0.1:3306)/ginchat?charset=utf8&parseTime=true&loc=Local
+
 1.
 前后端分离引入swagger
 
