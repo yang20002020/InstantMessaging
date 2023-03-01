@@ -1,4 +1,6 @@
-1. 前后端分离引入swagger
+1.
+前后端分离引入swagger
+
  资料地址: https://pkg.go.dev/github.com/swaggo/swag
 使用方法：
 (1).下载地址：$ go install github.com/swaggo/swag/cmd/swag@latest
@@ -8,7 +10,8 @@
 (5). 运行 主程序
 浏览器 127.0.0.1:8081/swagger/index.html，页面会显示swagger对应的页面logo
 
-2.在package service包中
+2.
+在package service包中
 （1）添加注释格式，注意写的格式不能出现错误，如下所示
 // GetIndex
 // @Tags         首页
@@ -17,13 +20,17 @@
 （2） 在命令行中输入swag init
 （3）浏览器 127.0.0.1:8081/swagger/index.html，进行测试
 同理，应用在GetUserList函数
-3.sql日志打印
+3.
+sql日志打印
 （1）在InitMySql() 函数中自定义日志模板，打印sql语句
  运行程序，终端会显示
  SELECT * FROM `user_basic` WHERE `user_basic`.`deleted_at` IS NULL
 
-4.实现用户模块新增、删除以及更新功能
+4.
+实现用户模块新增、删除以及更新功能
 测试
 浏览器 127.0.0.1:8081/swagger/index.html，进行测试
 输入 姓名、密码以及确认密码、id相关信息，数据库会对应更新user信息
 
+5.
+添加电话和邮箱校验

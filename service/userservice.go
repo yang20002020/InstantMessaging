@@ -72,6 +72,8 @@ func DeleteUser(c *gin.Context) {
 // @param id formData string false "id"
 // @param name formData string false "name"
 // @param password  formData string false "password"
+// @param phone formData string false "phone"
+// @param email  formData string false "email"
 // @Success  200  {string}  json{"code","message"}
 // @Router  /user/updateUser [post]
 func UpdateUser(c *gin.Context) {
@@ -80,6 +82,8 @@ func UpdateUser(c *gin.Context) {
 	user.ID = uint(id)
 	user.Name = c.PostForm("name")
 	user.PassWord = c.PostForm("password")
+	user.Phone = c.PostForm("phone")
+	user.Email = c.PostForm("email")
 	models.UpDateUser(user)
 	c.JSON(200, gin.H{
 		"message": "修改用户成功！",
