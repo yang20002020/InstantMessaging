@@ -20,7 +20,13 @@ http://127.0.0.1:8081/index
 config app: <nil>
 config mysql: dns:root:fendou2017@tcp(127.0.0.1:3306)/ginchat?charset=utf8&parseTime=true&loc=Local
 
-1.
+4.
+配置数据初始化以及前后端交互测试
+（1).运行主程序
+（2). 浏览器输入 http://127.0.0.1:8081/user/getUserList
+浏览器会显示对应的信息
+
+5.
 前后端分离引入swagger
 
  资料地址: https://pkg.go.dev/github.com/swaggo/swag
@@ -32,7 +38,7 @@ config mysql: dns:root:fendou2017@tcp(127.0.0.1:3306)/ginchat?charset=utf8&parse
 (5). 运行 主程序
 浏览器 127.0.0.1:8081/swagger/index.html，页面会显示swagger对应的页面logo
 
-2.
+6.
 在package service包中
 （1）添加注释格式，注意写的格式不能出现错误，如下所示
 // GetIndex
@@ -42,17 +48,17 @@ config mysql: dns:root:fendou2017@tcp(127.0.0.1:3306)/ginchat?charset=utf8&parse
 （2） 在命令行中输入swag init
 （3）浏览器 127.0.0.1:8081/swagger/index.html，进行测试
 同理，应用在GetUserList函数
-3.
+6.
 sql日志打印
 （1）在InitMySql() 函数中自定义日志模板，打印sql语句
  运行程序，终端会显示
  SELECT * FROM `user_basic` WHERE `user_basic`.`deleted_at` IS NULL
 
-4.
+8.
 实现用户模块新增、删除以及更新功能
 测试
 浏览器 127.0.0.1:8081/swagger/index.html，进行测试
 输入 姓名、密码以及确认密码、id相关信息，数据库会对应更新user信息
 
-5.
+9.
 添加电话和邮箱校验
