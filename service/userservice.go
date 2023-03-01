@@ -35,6 +35,14 @@ func CreateUser(c *gin.Context) {
 	user.Name = c.Query("name")
 	passWord := c.Query("password")
 	repassWord := c.Query("repassword")
+
+	data := models.FindUserByName(user.Name)
+	if data.Name != " " {
+		c.JSON(200, gin.H{
+			"message": "用户名已经注册",
+		})
+		return
+	}
 	if passWord != repassWord {
 		c.JSON(200, gin.H{
 			"message": "两次密码不一致",

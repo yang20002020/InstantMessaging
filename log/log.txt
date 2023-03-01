@@ -77,3 +77,11 @@ sql日志打印
 （6）正确输入例如 phone：15112345678  邮箱  @126.com
 浏览器界面会显示修改正确的提示信息
 
+
+11
+用户名重复注册校验
+（1）运行主程序
+（2）浏览器 127.0.0.1:8081/swagger/index.html，进行测试
+输入数据库中已经注册的姓名，浏览器会显示已经被注册的信息
+（3）终端会显示sql语句
+SELECT * FROM `user_basic` WHERE name='li' AND `user_basic`.`deleted_at` IS NULL ORDER BY `user_basic`.`id` LIMIT 1
