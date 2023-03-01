@@ -3,6 +3,14 @@ gin项目初始化以及gorm的引入
 测试：
 运行testGorm.go
 打开navicat ,查看数据库ginchat
+2.
+gin引入以及项目目录的创建
+运行主程序
+浏览器测试：
+http://127.0.0.1:8081/index
+运行test1.go
+浏览器测试：
+127.0.0.1:8081/ping
 
 1.
 前后端分离引入swagger
