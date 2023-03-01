@@ -11,8 +11,8 @@ type UserBasic struct {
 	gorm.Model
 	Name          string
 	PassWord      string
-	Phone         string
-	Email         string
+	Phone         string `valid:"matches(^1[3-9]\\d{9}$)"`
+	Email         string `valid:"email"`
 	Identity      string
 	ClientIp      string
 	ClientPort    string

@@ -3,6 +3,7 @@ package service
 import (
 	"InstantMessaging/models"
 	"fmt"
+	"github.com/asaskevich/govalidator"
 	"github.com/gin-gonic/gin"
 	"strconv"
 )
@@ -84,6 +85,17 @@ func UpdateUser(c *gin.Context) {
 	user.PassWord = c.PostForm("password")
 	user.Phone = c.PostForm("phone")
 	user.Email = c.PostForm("email")
+	fmt.Println("update:", user)
+	//校验
+	_, err := govalidator.ValidateStruct(user)
+	if err != nil {
+		fmt.Println(err)
+		c.JSON(200, gin.H{
+			"message": "修改用户参数不匹配！",
+		})
+		return
+	}
+
 	models.UpDateUser(user)
 	c.JSON(200, gin.H{
 		"message": "修改用户成功！",
