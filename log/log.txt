@@ -85,3 +85,12 @@ sql日志打印
 输入数据库中已经注册的姓名，浏览器会显示已经被注册的信息
 （3）终端会显示sql语句
 SELECT * FROM `user_basic` WHERE name='li' AND `user_basic`.`deleted_at` IS NULL ORDER BY `user_basic`.`id` LIMIT 1
+
+12
+MD5加密
+(1) 添加字段 Salt，运行testGorm.go使数据库对应的产生新字段
+（2）添加 加密和解密相关函数和逻辑
+（3）运行主程序
+（3）浏览器 127.0.0.1:8081/swagger/index.html，进行测试;
+(4)在浏览器上user/createUser 上输入新用户信息包括密码
+（5）打开navicat，会对应的显示新增用户信息，包括加密的密码

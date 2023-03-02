@@ -2,9 +2,11 @@ package service
 
 import (
 	"InstantMessaging/models"
+	"InstantMessaging/utils"
 	"fmt"
 	"github.com/asaskevich/govalidator"
 	"github.com/gin-gonic/gin"
+	"math/rand"
 	"strconv"
 )
 
@@ -35,22 +37,31 @@ func CreateUser(c *gin.Context) {
 	user.Name = c.Query("name")
 	passWord := c.Query("password")
 	repassWord := c.Query("repassword")
-
+	//
+	salt := fmt.Sprintf("%06d", rand.Int31())
+	fmt.Println("salt:", salt)
+	//
 	data := models.FindUserByName(user.Name)
-	if data.Name != " " {
-		c.JSON(200, gin.H{
+	//注意是“”，不是“ ”
+	if data.Name != "" {
+		fmt.Println("data.Name:", data.Name)
+		c.JSON(-1, gin.H{
 			"message": "用户名已经注册",
 		})
 		return
 	}
 	if passWord != repassWord {
-		c.JSON(200, gin.H{
+		c.JSON(-1, gin.H{
 			"message": "两次密码不一致",
 		})
 		return
 	}
+
+	//user.PassWord=passWord
+	user.PassWord = utils.MakePassword(passWord, salt)
+	fmt.Println("user.PassWord:", passWord)
+
 	fmt.Println("密码一致")
-	user.PassWord = passWord
 	models.CreateUser(user)
 	c.JSON(200, gin.H{
 		"message": "新增用户成功！",

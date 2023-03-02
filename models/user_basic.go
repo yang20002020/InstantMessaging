@@ -21,6 +21,7 @@ type UserBasic struct {
 	LoginOutTime  time.Time `gorm:"column:login_out_time" json:"login_out_time"`
 	IsLoginOut    bool
 	DeviceInfo    string
+	Salt          string
 }
 
 func (table *UserBasic) TableName() string {
@@ -49,14 +50,14 @@ func UpDateUser(user UserBasic) *gorm.DB {
 
 func FindUserByName(name string) UserBasic {
 	user := UserBasic{}
-	utils.DB.Where("name=?", name).First(&user)
+	utils.DB.Where("name= ?", name).First(&user)
 	return user
 }
 func FindUserByPhone(phone string) *gorm.DB {
 	user := UserBasic{}
-	return utils.DB.Where("phone=?", phone).First(&user)
+	return utils.DB.Where("phone= ?", phone).First(&user)
 }
 func FindUserByEmail(email string) *gorm.DB {
 	user := UserBasic{}
-	return utils.DB.Where("email=?", email).First(&user)
+	return utils.DB.Where("email= ?", email).First(&user)
 }
