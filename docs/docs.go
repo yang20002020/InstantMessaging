@@ -89,7 +89,7 @@ const docTemplate = `{
             }
         },
         "/user/findUserByNameAndPwd": {
-            "get": {
+            "post": {
                 "tags": [
                     "用户模块"
                 ],

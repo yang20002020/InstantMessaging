@@ -127,7 +127,7 @@ func UpdateUser(c *gin.Context) {
 // @param name query string false "用户名"
 // @param password query string false "密码"
 // @Success  200  {string}  json{"code","message"}
-// @Router  /user/findUserByNameAndPwd [get]
+// @Router  /user/findUserByNameAndPwd [post]
 func FindUserByNameAndPwd(c *gin.Context) {
 	data := models.UserBasic{}
 	name := c.Query("name")

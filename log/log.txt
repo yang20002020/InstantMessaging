@@ -95,6 +95,10 @@ MD5加密
 (4)在浏览器上user/createUser 上输入新用户信息包括密码
 （5）打开navicat，会对应的显示新增用户信息，包括加密的密码
 13
-登录操作？？？
-测试（1）在swagger浏览界面注册新用户
-（2）在postman上输入信息验证
+登录操作
+测试（1）在swagger浏览界面注册新用户  名称 zhao  密码123
+（2）在postman上输入信息验证127.0.0.1:8081/user/findUserByNameAndPwd
+name zhao;password 123;可以获取用户信息，查看截图logpicture
+（3）在swagger 浏览器上/user/findUserByNameAndPwd
+姓名输入 zhao； 密码 输入 123；
+同样可以获取用户信息，具体可查看截图logpicture
