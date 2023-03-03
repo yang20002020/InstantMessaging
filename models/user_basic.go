@@ -53,6 +53,13 @@ func FindUserByName(name string) UserBasic {
 	utils.DB.Where("name= ?", name).First(&user)
 	return user
 }
+
+func FindUserByNameAndPwd(name, password string) UserBasic {
+	user := UserBasic{}
+	utils.DB.Where("name= ? and pass_word=?", name, password).First(&user)
+	return user
+}
+
 func FindUserByPhone(phone string) *gorm.DB {
 	user := UserBasic{}
 	return utils.DB.Where("phone= ?", phone).First(&user)
