@@ -102,3 +102,16 @@ name zhao;password 123;可以获取用户信息，查看截图logpicture
 （3）在swagger 浏览器上/user/findUserByNameAndPwd
 姓名输入 zhao； 密码 输入 123；
 同样可以获取用户信息，具体可查看截图logpicture
+14
+引入token 鉴权
+(1)go get -u -v github.com/appleboy/gin-jwt
+(2)在github上述地址上复制代码到testNetty.go上
+（3）启动testNetty.go
+在postman 上输入 127.0.0.1:8000/login?username=admin&password=admin
+会显示对应的信息，如截图所示14_引入token鉴权
+在postman 上输入127.0.0.1:8000/auth/hello
+会显示对应的信息，如截图所示14_引入token鉴权_1;
+(4)identity数值会更新显示在浏览器
+(5)运行主程序
+在swagger 浏览器中创建新用户，在/user/findUserByNameAndPwd中查找对应的用户信息，可以查看到identity
+如截图所示14_引入token鉴权_2、如截图所示14_引入token鉴权_3;
