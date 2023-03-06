@@ -124,3 +124,13 @@ name zhao;password 123;可以获取用户信息，查看截图logpicture
 （4）开启redis  具体操作如下在目录D:\Redis_windows>下输入命令: redis-server  redis.windows.conf
  (5)运行主程序
  (6)终端会显示redis 初始化成功标志，如下所示:redis inited ... PONG
+ 16
+ websocket 
+ (1)go get -u -v github.com/gorilla/websocket
+ 测试
+ （1）运行主程序
+ 打开网址jsons.cn/websocket/
+ （2）输入ws://localhost:8081/user/sendMsg
+ 点击 “websocket连接” 按钮，显示已经连接成功， 如图所示16_websocket.png
+ （3）输入 信息如 123，点击发送，会显示16_websocket_1.png
+ (4) 程序终端会显示16_websocket_2.png
