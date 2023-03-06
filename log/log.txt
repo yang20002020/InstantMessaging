@@ -115,3 +115,12 @@ name zhao;password 123;可以获取用户信息，查看截图logpicture
 (5)运行主程序
 在swagger 浏览器中创建新用户，在/user/findUserByNameAndPwd中查找对应的用户信息，可以查看到identity
 如截图所示14_引入token鉴权_2、如截图所示14_引入token鉴权_3;
+
+15.
+引入redis
+ (1)引入redis包
+（2）修改app.yml配置文件，添加redis相关配置
+ (3)修改redis配置文件D:\Redis_windows\redis.windows.conf 对应的bind 192.168.*.*
+（4）开启redis  具体操作如下在目录D:\Redis_windows>下输入命令: redis-server  redis.windows.conf
+ (5)运行主程序
+ (6)终端会显示redis 初始化成功标志，如下所示:redis inited ... PONG
