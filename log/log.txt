@@ -125,7 +125,7 @@ name zhao;password 123;可以获取用户信息，查看截图logpicture
  (5)运行主程序
  (6)终端会显示redis 初始化成功标志，如下所示:redis inited ... PONG
  16
- websocket 
+ websocket
  (1)go get -u -v github.com/gorilla/websocket
  测试
  （1）运行主程序
@@ -134,3 +134,9 @@ name zhao;password 123;可以获取用户信息，查看截图logpicture
  点击 “websocket连接” 按钮，显示已经连接成功， 如图所示16_websocket.png
  （3）输入 信息如 123，点击发送，会显示16_websocket_1.png
  (4) 程序终端会显示16_websocket_2.png
+
+ 17
+ 构建 人员关系表、群信息表、信息表
+ （1）在models文件包里创建contact、group_basic 、message 结构体
+ （2）优化testGorm，并运行testGorm.go
+ （3） 查看navicat 是否已经创建了对应的数据表

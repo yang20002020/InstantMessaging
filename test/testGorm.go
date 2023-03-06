@@ -26,6 +26,17 @@ func main() {
 		panic("failed to connect database")
 	}
 
+	//UserBasic
+	//test1(db)
+	//Message
+	test2(db)
+	//Contact
+	test3(db)
+	//GroupBasic
+	test4(db)
+}
+func test1(db *gorm.DB) {
+
 	// 迁移 schema 纲要
 	db.AutoMigrate(&models.UserBasic{})
 
@@ -39,4 +50,16 @@ func main() {
 	// Update - 将 product 的 price 更新为 200
 	db.Model(user).Update("PassWord", "1234")
 
+}
+func test2(db *gorm.DB) {
+
+	// 迁移 schema 纲要
+	db.AutoMigrate(&models.Message{})
+
+}
+func test3(db *gorm.DB) {
+	db.AutoMigrate(&models.Contact{})
+}
+func test4(db *gorm.DB) {
+	db.AutoMigrate(&models.GroupBasic{})
 }
