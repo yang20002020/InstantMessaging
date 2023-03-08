@@ -140,3 +140,14 @@ name zhao;password 123;可以获取用户信息，查看截图logpicture
  （1）在models文件包里创建contact、group_basic 、message 结构体
  （2）优化testGorm，并运行testGorm.go
  （3） 查看navicat 是否已经创建了对应的数据表
+ 18
+   发送接收消息，实现骨架
+  (1)go get gopkg.in/fatih/set.v0
+  (2)添加相关代码
+
+  测试
+  (1)启动redis
+  (2)启动主程序
+  (3)打开网址jsons.cn/websocket/
+  输入 ws://localhost:8081/user/sendUserMsg，点击websocket连接
+  会显示 “欢迎进入聊天系统”的提示，如图所示：18_发送消息
