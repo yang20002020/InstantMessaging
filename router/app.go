@@ -21,6 +21,7 @@ func Router() *gin.Engine {
 	//首页
 	r.GET("/", service.GetIndex)
 	r.GET("/index", service.GetIndex)
+	r.GET("/toRegister", service.ToRegister)
 	//用户模块
 	r.GET("/user/getUserList", service.GetUserList)
 	r.GET("/user/createUser", service.CreateUser)

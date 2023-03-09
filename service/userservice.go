@@ -50,17 +50,25 @@ func CreateUser(c *gin.Context) {
 	//
 	data := models.FindUserByName(user.Name)
 	//注意是“”，不是“ ”
-	if data.Name != "" {
+	if user.Name == "" || passWord == "" || repassWord == "" {
 		fmt.Println("data.Name:", data.Name)
-		c.JSON(-1, gin.H{
+		c.JSON(200, gin.H{
 			"code":    -1, //0成功， -1 失败
-			"message": "用户名已经注册",
+			"message": "用户名或密码不能为空！",
+			"data":    user,
+		})
+		return
+	}
+	if data.Name != "" {
+		c.JSON(200, gin.H{
+			"code":    -1, //  0成功   -1失败
+			"message": "用户名已注册！",
 			"data":    user,
 		})
 		return
 	}
 	if passWord != repassWord {
-		c.JSON(-1, gin.H{
+		c.JSON(200, gin.H{
 			"code":    -1, //0成功， -1 失败
 			"message": "两次密码不一致",
 			"data":    user,
