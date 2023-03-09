@@ -157,3 +157,6 @@ name zhao;password 123;可以获取用户信息，查看截图logpicture
    （1）在InstantMessaging目录下复制index.html 文件、asset文件、views文件
     (2)启动 redis  和主程序
     (3) 在浏览器上输入 http://localhost:8081/ 显示对应界面 如图19_引入前端.png所示
+  20
+    切换到注册页面
+    (1) 点击页面中的"注册账号"，页面会切换到注册页面
