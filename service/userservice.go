@@ -41,16 +41,20 @@ func GetUserList(c *gin.Context) {
 // @Router  /user/createUser [get]
 func CreateUser(c *gin.Context) {
 	user := models.UserBasic{}
-	user.Name = c.Query("name")
-	passWord := c.Query("password")
-	repassWord := c.Query("repassword")
+	//user.Name = c.Query("name")
+	//passWord := c.Query("password")
+	//repassWord := c.Query("repassword")
+	user.Name = c.Request.FormValue("name")
+	password := c.Request.FormValue("password")
+	repassword := c.Request.FormValue("Identity")
+	fmt.Println(user.Name, "  >>>>>>>>>>>  ", password, repassword)
 	//salt 随机数
 	salt := fmt.Sprintf("%06d", rand.Int31())
 	fmt.Println("salt:", salt)
 	//
 	data := models.FindUserByName(user.Name)
 	//注意是“”，不是“ ”
-	if user.Name == "" || passWord == "" || repassWord == "" {
+	if user.Name == "" || password == "" || repassword == "" {
 		fmt.Println("data.Name:", data.Name)
 		c.JSON(200, gin.H{
 			"code":    -1, //0成功， -1 失败
@@ -67,7 +71,7 @@ func CreateUser(c *gin.Context) {
 		})
 		return
 	}
-	if passWord != repassWord {
+	if password != repassword {
 		c.JSON(200, gin.H{
 			"code":    -1, //0成功， -1 失败
 			"message": "两次密码不一致",
@@ -77,8 +81,8 @@ func CreateUser(c *gin.Context) {
 	}
 
 	//user.PassWord=passWord
-	user.PassWord = utils.MakePassword(passWord, salt)
-	fmt.Println("user.PassWord:", passWord)
+	user.PassWord = utils.MakePassword(password, salt)
+	fmt.Println("user.PassWord:", password)
 	user.Salt = salt
 	fmt.Println("密码一致")
 	models.CreateUser(user)
