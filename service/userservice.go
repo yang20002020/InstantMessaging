@@ -149,8 +149,11 @@ func UpdateUser(c *gin.Context) {
 // @Router  /user/findUserByNameAndPwd [post]
 func FindUserByNameAndPwd(c *gin.Context) {
 	data := models.UserBasic{}
-	name := c.Query("name")
-	password := c.Query("password")
+	//name := c.Query("name")
+	//password := c.Query("password")
+
+	name := c.Request.FormValue("name")
+	password := c.Request.FormValue("password")
 	user := models.FindUserByName(name)
 	if user.Name == "" {
 		c.JSON(200, gin.H{

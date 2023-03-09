@@ -83,6 +83,7 @@ func Chat(writer http.ResponseWriter, request *http.Request) {
 	sendMsg(userId, []byte("欢迎进入聊天系统"))
 }
 func sendProc(node *Node) {
+	fmt.Println("sendProc函数")
 	for {
 		select {
 		case data := <-node.DataQueue:
@@ -94,7 +95,10 @@ func sendProc(node *Node) {
 		}
 	}
 }
+
+// 后端接收消息
 func recvProc(node *Node) {
+	fmt.Println("recvProc函数")
 	for {
 		_, data, err := node.Conn.ReadMessage()
 
@@ -120,6 +124,7 @@ func init() {
 
 // 完成upd数据发送协程
 func updSendProc() {
+	fmt.Println("updSendProc函数")
 	con, err := net.DialUDP("udp", nil, &net.UDPAddr{
 		IP:   net.IPv4(192, 168, 0, 10),
 		Port: 3000,
@@ -143,6 +148,7 @@ func updSendProc() {
 
 // 完成udp数据接收协程
 func updRecvProc() {
+	fmt.Println("updRecvProc函数")
 	con, err := net.ListenUDP("udp", &net.UDPAddr{
 		IP:   net.IPv4zero,
 		Port: 3000,
@@ -183,6 +189,7 @@ func dispatch(data []byte) {
 	}
 }
 func sendMsg(userId int64, msg []byte) {
+	fmt.Println("sendMsg函数")
 	rwLocker.RLock()
 	node, ok := clientMap[userId]
 	rwLocker.RUnlock()

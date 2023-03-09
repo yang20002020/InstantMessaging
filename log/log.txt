@@ -151,3 +151,9 @@ name zhao;password 123;可以获取用户信息，查看截图logpicture
   (3)打开网址jsons.cn/websocket/
   输入 ws://localhost:8081/user/sendUserMsg，点击websocket连接
   会显示 “欢迎进入聊天系统”的提示，如图所示：18_发送消息
+
+  19
+    引入前端
+   （1）在InstantMessaging目录下复制index.html 文件、asset文件、views文件
+    (2)启动 redis  和主程序
+    (3) 在浏览器上输入 http://localhost:8081/ 显示对应界面 如图19_引入前端.png所示
