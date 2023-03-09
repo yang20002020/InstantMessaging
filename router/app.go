@@ -17,11 +17,11 @@ func Router() *gin.Engine {
 	//静态资源
 	r.Static("/asset", "asset/")
 	r.LoadHTMLGlob("views/**/*")
-
 	//首页
 	r.GET("/", service.GetIndex)
 	r.GET("/index", service.GetIndex)
 	r.GET("/toRegister", service.ToRegister)
+	r.GET("/toChat", service.ToChat)
 	//用户模块
 	r.POST("/user/getUserList", service.GetUserList)
 	r.POST("/user/createUser", service.CreateUser)
