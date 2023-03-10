@@ -170,3 +170,5 @@ name zhao;password 123;可以获取用户信息，查看截图logpicture
   （2）运行主程序 go run main.go
   （3）打开 postman，输入 http://localhost:8081/searchFriends?userId=8
   （4）显示测试结果22_显示好友列表_03、22_显示好友列表_04
+23
+   让后端的loadFriends在前端显示
