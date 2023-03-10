@@ -164,3 +164,9 @@ name zhao;password 123;可以获取用户信息，查看截图logpicture
     (3)点击注册后，查看navicat，数据库会显示对应的新用户信息。
  21
   登录成功之后，切换到聊天界面
+ 22
+  在postman上显示好友列表
+  （1）确认数据库对应的数据信息如图所示：22_显示好友列表_01、22_显示好友列表_02
+  （2）运行主程序 go run main.go
+  （3）打开 postman，输入 http://localhost:8081/searchFriends?userId=8
+  （4）显示测试结果22_显示好友列表_03、22_显示好友列表_04
